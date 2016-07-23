@@ -3,8 +3,13 @@ language: erlang
 env:
   - LUA="lua5.1" LUAC="luac5.1"
 
+addons:
+  apt:
+    packages:
+      - $LUA
+      - luarocks
+
 install:
-  - sudo apt-get install $LUA luarocks
   - sudo luarocks install luaunit 2.1
   - sudo luarocks install mockagne 1.0
   - sudo luarocks install luabitop 1.0.2
