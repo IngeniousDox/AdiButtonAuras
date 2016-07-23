@@ -12,7 +12,7 @@ addons:
 install:
   - sudo luarocks install luaunit 2.1
   - sudo luarocks install mockagne 1.0
-  - sudo luarocks install luabitop 1.0.2-3
+  - sudo luarocks install luabitop
 
 script:
   - cd tests
