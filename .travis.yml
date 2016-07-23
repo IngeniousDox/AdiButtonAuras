@@ -7,7 +7,7 @@ env:
 addons:
   apt:
     packages:
-      - $LUA
+      - lua5.1
       - luarocks
 
 install:
