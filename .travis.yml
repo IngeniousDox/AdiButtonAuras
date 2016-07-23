@@ -9,12 +9,12 @@ addons:
     packages:
       - lua5.1
       - luarocks
+      - liblua5.1-bitop0
 
 install:
   - eval $(luarocks path --bin)
   - luarocks install --local luaunit 2.1
   - luarocks install --local mockagne 1.0
-  - luarocks install --local luabitop
 
 script:
   - cd tests
