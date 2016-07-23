@@ -10,6 +10,7 @@ addons:
       - luarocks
 
 install:
+  - luarocks path --bin
   - sudo luarocks install luaunit 2.1
   - sudo luarocks install mockagne 1.0
   - sudo luarocks install luabitop
