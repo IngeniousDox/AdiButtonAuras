@@ -5,9 +5,9 @@ env:
 
 install:
   - sudo apt-get install $LUA luarocks
-  - sudo luarocks install luaunit
-  - sudo luarocks install mockagne
-  - sudo luarocks install luabitop
+  - sudo luarocks install luaunit 2.1
+  - sudo luarocks install mockagne 1.0
+  - sudo luarocks install luabitop 1.0.2
 
 script:
   - cd tests
