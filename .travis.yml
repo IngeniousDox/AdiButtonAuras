@@ -1,4 +1,4 @@
-language: erlang
+language: c
 
 env:
   - LUA="lua5.1" LUAC="luac5.1"
