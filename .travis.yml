@@ -1,4 +1,5 @@
 language: c
+sudo: false
 
 env:
   - LUA="lua5.1" LUAC="luac5.1"
@@ -10,10 +11,10 @@ addons:
       - luarocks
 
 install:
-  - luarocks path --bin
-  - sudo luarocks install luaunit 2.1
-  - sudo luarocks install mockagne 1.0
-  - sudo luarocks install luabitop
+  - eval $(luarocks path --bin)
+  - luarocks install luaunit 2.1
+  - luarocks install mockagne 1.0
+  - luarocks install luabitop
 
 script:
   - cd tests
@@ -26,3 +27,8 @@ notifications:
   email:
     on_failure: always
     on_success: change
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.luarocks
