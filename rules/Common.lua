@@ -291,15 +291,22 @@ AdiButtonAuras:RegisterRules(function()
 
 	local function SnaresHandler(units, model)
 		local unit = units.enemy
+      local longest = 0
 		if not unit or unit == '' then return end
 
 		for _, id, _, expiration in IterateDebuffs(unit) do
 			if debuffs[id] then
-				model.count = GetUnitSpeed(unit) / 7 * 100 + 0.1
-            model.expiration = expiration
-				return true
+				if expiration > longest then
+               longest = expiration
+            end
 			end
 		end
+
+      if longest > 0 then
+		   model.count = GetUnitSpeed(unit) / 7 * 100 + 0.1
+         model.expiration = longest
+         return true
+      end
 	end
 
 	for spell, category in next, snares do
